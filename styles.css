@@ -151,7 +151,7 @@ Highlights
 }
 
 #highlights:before {
-    background: url('assets/wave.svg');
+    background: url("assets/wave.svg");
     content: "";
     position: absolute;
     width: 101vw;
@@ -161,8 +161,12 @@ Highlights
     z-index: 1;
     background-size: cover;
     background-repeat: no-repeat;
-    transform: translateY(-100%);
 }
+
+    #highlights:before {
+        transform: translateY(-100%);
+        top: 1px;
+    }
 
 #highlights:after {
     background: url('assets/wave.svg');
@@ -175,15 +179,14 @@ Highlights
     z-index: 1;
     background-size: cover;
     background-repeat: no-repeat;
-    transform: translateY(100%); 
-    rotate: (180deg);
-
+    transform: translateY(100%) rotate(180deg);
 }
 
 
 
 .highlight__wrapper {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .highlight {
