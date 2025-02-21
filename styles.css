@@ -148,6 +148,21 @@ li {
     color: white;
 }
 
+ /* Default styles for the burger menu icon */
+ .menu-icon {
+    display: block; /* Show the burger menu icon by default */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Hide the burger menu icon on screens wider than 550px */
+@media (min-width: 551px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+
 /* 
 
 Landing
@@ -316,7 +331,6 @@ background-repeat: no-repeat;
     width: calc(100% / 3);
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
 }
 
@@ -341,6 +355,7 @@ background-repeat: no-repeat;
 .highlight__subtitle {
     font-size: 20px;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 /* 
@@ -457,12 +472,52 @@ footer {
         padding: 0 8px;
     }
 
+    /* Small Phones, Tablets, Large Smartphones */
+    @media (max-width: 768px) {
+        .header__description {
+            padding: 0 24px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+
+        button {
+            font-size: 18px;
+        }
+
+        .book {
+            width: 50%;
+        }
+
+    
+    }
+
+
+    /* Small Phones, Large Smartphones */
     @media (max-width: 550px) {
-        .nav__links {
+        .btn__menu {
+            display: block;
+        }
+
+       .nav__links {
             display: none;
+        }
+        
+        .highlight {
+            width: 100%;
+        }
+
+        .highlight:not(:last-child) {
+            margin-bottom: 24px;
         }
     }
 
-    .btn__menu {
-        display: block;
-    }
+   
+    
+    
+
