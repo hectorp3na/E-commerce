@@ -1,23 +1,26 @@
 function renderBooks(filter) {
-  const booksWrapper = document.querySelector('.books');
+  const booksWrapper = document.querySelector(".books");
 
-const books = getBooks();
+  const books = getBooks();
 
-if (filter === 'LOW_TO_HIGH') {
-  books.sort((a, b) => a.originalPrice - b.originalPrice);
-}
-else if(filter === 'HIGH_TO_LOW') {
-  books.sort((a, b) => b.originalPrice - a.originalPrice);
-}
-else if (filter === 'RATING') {
-  books.sort((a, b) => b.rating - a.rating);
-}
+  if (filter === "LOW_TO_HIGH") {
+    books.sort((a, b) => a.originalPrice - b.originalPrice);
+  } else if (filter === "HIGH_TO_LOW") {
+    books.sort((a, b) => b.originalPrice - a.originalPrice);
+  } else if (filter === "RATING") {
+    books.sort((a, b) => b.rating - a.rating);
+  }
 
-const booksHtml = books
-  .map((book) => {
-    const salePrice = originalPrice ? `<div class="book__sale-price"><span>$${book.salePrice.toFixed(2)}</span></div>` : '';
+  const booksHtml = books
+  const salePrice = originalPrice
+    .map((book) => {
     
-    return `<div class="book">
+        return `<div class="book__sale-price"><span>$${book.salePrice.toFixed(
+            2
+          )}</span></div>`
+        : "";
+
+      return `<div class="book">
       <figure class="book__img--wrapper">
         <img class="book__img" src="${book.url}" alt="" />
       </figure>
@@ -31,27 +34,25 @@ const booksHtml = books
         <span>$${book.originalPrice.toFixed(2)}</span>
       </div>
     </div>`;
-  })
-  .join("");
+    })
+    .join("");
 
-
-booksWrapper.innerHTML = booksHtml;
+  booksWrapper.innerHTML = booksHtml;
 }
 
 function ratingsHTML(rating) {
   let ratingHTML = "";
   for (let i = 0; i < Math.floor(rating); ++i) {
-    ratingHTML += '<i class="fas fa-star"></i>'
+    ratingHTML += '<i class="fas fa-star"></i>';
   }
   if (!Number.isInteger(rating)) {
-  ratingHTML += '<i class="fas fa-star-half-alt"></i>'
+    ratingHTML += '<i class="fas fa-star-half-alt"></i>';
   }
   return ratingHTML;
 }
 function filterBooks(event) {
-renderBooks(event.target.value);
-  }
-
+  renderBooks(event.target.value);
+}
 
 setTimeout(() => {
   renderBooks();
