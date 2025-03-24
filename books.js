@@ -42,7 +42,7 @@ function ratingsHTML(rating) {
     ratingHTML += '<i class="fas fa-star">★</i>\n'
   }
   if (!Number.isInteger(rating)) {
-  ratingHTML += '<i class="fa-solid fa-star-half-stroke"></i>'
+  ratingHTML += '< i class="fa-star-half-stroke"></i>'
   }
   return ratingHTML;
 }
