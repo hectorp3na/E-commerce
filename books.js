@@ -39,14 +39,13 @@ booksWrapper.innerHTML = booksHtml;
 function ratingsHTML(rating) {
   let ratingHTML = "";
   for (let i = 0; i < Math.floor(rating); ++i) {
-    ratingHTML += '<i class="fas fa-star"></i>\n'
+    ratingHTML += '<i class="fas fa-star"></i>'
   }
   if (!Number.isInteger(rating)) {
-  ratingHTML += '< i class="fa-star-half-stroke"></i>'
+  ratingHTML += '<i class="fas fa-star-half-alt"></i>'
   }
   return ratingHTML;
 }
-
 function filterBooks(event) {
 renderBooks(event.target.value);
   }
