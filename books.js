@@ -15,6 +15,8 @@ else if (filter === 'RATING') {
 
 const booksHtml = books
   .map((book) => {
+    const salePrice = originalPrice ? `<div class="book__sale-price"><span>$${book.salePrice.toFixed(2)}</span></div>` : '';
+    
     return `<div class="book">
       <figure class="book__img--wrapper">
         <img class="book__img" src="${book.url}" alt="" />
