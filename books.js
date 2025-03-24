@@ -15,10 +15,10 @@ function renderBooks(filter) {
   const salePrice = originalPrice
     .map((book) => {
     
-        return `<div class="book__sale-price"><span>$${book.salePrice.toFixed(
-            2
-          )}</span></div>`
-        : "";
+        return `<div class="book__sale-price"><span>$${book.salePrice.toFixed(2)}
+          </span>
+        </div>`
+         "";
 
       return `<div class="book">
       <figure class="book__img--wrapper">
