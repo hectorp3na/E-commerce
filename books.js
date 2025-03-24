@@ -39,7 +39,7 @@ booksWrapper.innerHTML = booksHtml;
 function ratingsHTML(rating) {
   let ratingHTML = "";
   for (let i = 0; i < Math.floor(rating); ++i) {
-    ratingHTML += '<i class="fas fa-star">★</i>\n'
+    ratingHTML += '<i class="fas fa-star"></i>\n'
   }
   if (!Number.isInteger(rating)) {
   ratingHTML += '< i class="fa-star-half-stroke"></i>'
