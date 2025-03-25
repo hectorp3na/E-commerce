@@ -410,7 +410,7 @@ Featurses
 
 .book__title:hover {
     text-decoration: underline;
-    cursor: no-drop;
+    cursor: not-allowed;
 }
 
 .book__ratings {
@@ -481,6 +481,35 @@ footer {
     
     .footer__link {
         padding: 0 8px;
+    }
+
+    .books__loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 60px;
+        font-size: 60px;
+        color: #7342d6;
+    }
+
+    .books__loading--spinner {
+        display: none !important;
+    }
+    .books__loading .books__loading--spinner {
+        display: block !important;
+    }
+
+    .fa-spinner {
+        animation: rotate 600ms infinite linear;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     /* Small Phones, Tablets, Large Smartphones */
